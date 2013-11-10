@@ -1,0 +1,22 @@
+{
+  "name": "harbors",
+  "version": "0.0.1",
+  "description": "Rapid nodejs server",
+  "main": "starup.js",
+  "scripts": {
+    "test": "harbors test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devhacker520/harbors.git"
+  },
+  "keywords": [
+    "frame"
+  ],
+  "author": "WangSijie",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/devhacker520/harbors/issues"
+  }
+}
