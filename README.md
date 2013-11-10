@@ -58,7 +58,7 @@ request
 
 request.Cookie
 
-    cookie对象封装，格式{cookieName:cookieValue}
+cookie对象封装，格式{cookieName:cookieValue}
 
 request.Session
 
