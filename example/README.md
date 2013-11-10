@@ -10,5 +10,6 @@ harbors
         |-common    --vhost.js中设置的虚拟主机目录
             |-filter.js --主机下的过滤器
     modules --存放自定义模块的目录
+    node_modules    --nodejs插件目录
     view    --视图文件目录
         |-common    --vhost设置的虚拟主机目录
