@@ -25,6 +25,7 @@ harbors支持两种模式的服务器状态：
 
 
 'dynamic'模式下harbors处理完数据会在controller目录下寻找filter.js过滤器。并传递给req，res两个参数。语法和原生nodejs一致。（api见下）
+
 'static'是处理静态文件请求服务的模式。收到浏览器请求后，会在view文件夹下自动寻找请求的文件，存在则返回给浏览器。
 
 
