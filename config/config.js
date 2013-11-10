@@ -5,6 +5,7 @@ module.exports = {
     baseDir: path.join(__dirname, '/..'),//服务目录地址
     clusterNum:3, //开启子的进程数
     staticTime:1000*60*60*24,//静态文件客户端缓存时间（默认一天）
+    sraticFile:'index.html',//静态文件服务器访问文件夹地址默认寻找目录下的这个文件
     //session
     session:true,//是否开启服务器session
     sessionId:'harborsId',//session存储的cookie名字
