@@ -13,7 +13,7 @@ module.exports = {
     clearSession:1000*60*30,//session清理时间（默认值1小时）
     //主机设置
     vhost:false,//是否开启虚拟主机服务，开启的话默认会寻找controller目录下的虚拟主机目录
-    serverType:'static',//主机类型，动态:'dynamic'，静态响应式服务器:'static'.只有在关闭vhost的时候生效
+    serverType:'dynamic',//主机类型，动态:'dynamic'，静态响应式服务器:'static'.只有在关闭vhost的时候生效
     //开发设置
     deBug:true//调试模式，自动打印出运行状态流程等信息
 };
