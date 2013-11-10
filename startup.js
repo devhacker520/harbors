@@ -10,4 +10,4 @@ global.harbors = {
 
 
 //主进程
-require("./master");
+require("./server/master").start();
