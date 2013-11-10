@@ -10,7 +10,7 @@ harbors
 
 目录结构以及一些配置信息在node_modules/harbors/example示例目录下。
 
-node start.js会自动调用node_modules/harbors/startup.js
+node start.js会自动调用node_modules/harbors/inexjs
 
 
 

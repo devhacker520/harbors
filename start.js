@@ -1,1 +1,1 @@
-require("./node_modules/harbors/startup");
+require("harbors");
