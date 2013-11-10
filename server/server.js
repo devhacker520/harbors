@@ -6,15 +6,41 @@ var app = {
 
         app.param();
 
-        harbors.config.deBug&&console.log("递交控制器"+harbors.config.baseDir+'/'+harbors.vhost[req.vhost]['baseDir']+"/filter");
-        //递交控制权限给vhost下的filter控制器
+        //递交控制权限
         try{
-            require(harbors.config.baseDir+'/'+harbors.vhost[req.vhost]['baseDir']+"/filter")(_req,_res);
+
+            harbors.config.vhost ? (function(){//虚拟主机功能打开
+
+                //判断服务器类型
+                switch(harbors.vhost[req.vhost]['type']){
+                    case 'dynamic':
+                        require(harbors.config.baseDir+'/controller/'+harbors.vhost[req.vhost]['baseDir']+"/filter")(_req,_res);
+                        break;
+                    default:
+                        //静态服务器
+                        _res.display(_req.url);
+                }
+
+            })() : (function(){//虚拟主机功能关闭
+
+                //判断服务器类型
+                switch(harbors.config.serverType){
+                    case 'dynamic':
+                        console.log(harbors.config.baseDir+'/controller/filter')
+                        require(harbors.config.baseDir+'/controller/filter')(_req,_res);
+                        break;
+                    default:
+                        //静态服务器
+                        _res.display(_req.url);
+                }
+
+            })();
+
         }catch(err){
             console.log(err);
-            harbors.config.deBug&&console.log("虚拟主机文件夹下的filter.js不存在或者语法出现错误");
+            harbors.config.deBug&&console.log("解析路由路径出错。");
             _res.writeHead(200, {"Content-Type": "text/plain", "Connection": "close"});
-            _res.end("vhost is lost");
+            _res.end("host is lost");
         }
     },
     param:function(){
@@ -25,20 +51,25 @@ var app = {
         //封装GET参数
         _req.Get = param.Get(_req);
 
-        var cookie = require('./../lib/cookie').init(_req,_res);
         //封装cookie对象
+        var cookie = require('./../lib/cookie').init(_req,_res);
         _req.Cookie = cookie.Cookie(_req);
         _res.setCookie = cookie.setCookie;
         _res.delCookie = cookie.delCookie;
 
-        var session = require('./../lib/session').init(_req,_res);
         //封装session对象
-        _req.Session = session.Session(_req);
-        _res.setSession = session.setSession;
-        _res.delSession = session.delSession;
+        harbors.config.session&&(function(){
+            var session = require('./../lib/session').init(_req,_res);
+            _req.Session = session.Session(_req);
+            _res.setSession = session.setSession;
+            _res.delSession = session.delSession;
+        })();
 
         //封装vhost虚拟主机名
-        _req.vhost = _req.headers.host.split(":")[0];
+        _req.vhost = harbors.config.vhost ? _req.headers.host.split(":")[0] : '';
+
+        //封装display方法
+        _res.display = require('../lib/display').init(_req,_res).render;
     }
 };
 

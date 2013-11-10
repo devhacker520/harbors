@@ -1,6 +1,6 @@
 {
   "name": "harbors",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Rapid nodejs server",
   "main": "starup.js",
   "scripts": {

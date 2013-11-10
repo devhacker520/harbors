@@ -9,7 +9,6 @@ var app = {
                     delete harbors.session[p];
                 }
             }
-            console.log(harbors.session);
             app.clearSession();
         },harbors.config.clearSession);
     },
@@ -29,9 +28,8 @@ var app = {
             }
         } else if (cluster.isWorker) {
             http.createServer(function(req,res){
-                harbors.config.deBug&&console.log('子进程接收数据请求 #' + cluster.worker.id);
+                harbors.config.deBug&&console.log('子进程接收数据请求 ID:' + cluster.worker.id);
                 require('./server').init(req,res);
-                console.log(harbors.session)
             }).listen(harbors.config.listenPort);
         }
         //自动清理session
