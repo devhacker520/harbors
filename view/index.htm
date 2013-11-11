@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>酷统计 API帮助文档</title>
+        <link type="text/css" rel="stylesheet" href="css/style.css"/>
+        <script type="text/javascript" src="js/jquery-min.js" ></script>
+        <script type="text/javascript" src="js/showdown/showdown.js" ></script>
+        <script type="text/javascript" src="js/showdown/extensions/table.js" ></script>
+    </head>
+    <body>
+        <div id="nav">
+            <ul>
+                <li data-uri="index.md">文档约定</li>
+                <li data-uri="seo/searchengine.md">SEO分析-搜索引擎</li>
+                <li data-uri="seo/keyword.md">SEO分析-关键词</li>
+            </ul>
+        </div>
+        <div id="content">
+            <article class="markdown-body entry-content">酷统计 API帮助文档</article>
+        </div>
+        <script type="text/javascript">
+
+            var converter = new Showdown.converter({extensions: ['table']});
+
+            function getMarkDown(uri)
+            {
+                $.get('/help/markdown/' + uri, function(data) {
+                    mdHtml = converter.makeHtml(data);
+
+                    $("#content article").html(mdHtml);
+                }, 'html');
+            }
+
+            $(function() {
+                $.ajaxSetup({cache: false});
+                getMarkDown('index.md');
+            });
+
+            $(function() {
+                $("#nav li").bind('click', function() {
+                    getMarkDown($(this).attr('data-uri'));
+                });
+            });
+        </script>
+    </body>
+</html>
