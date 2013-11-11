@@ -55,26 +55,26 @@ harbors支持apache的vhost类似功能。具体配置在config/config.js中开�
 
 ##request
 
-    *request.Cookie
-    >cookie对象封装，格式{cookieName:cookieValue}
-    *request.Session
-    >session对象封装（需要在config.js开启session功能，会轻微影响服务器性能）格式同cookie。
-    >开启session的同时会生成一个cookie，名字可以在config.js设置。session下的update一般情况请勿操作。服务器会自行判断更新该值。
-    *request.route
-    >路由路径封装。浏览器地址http://xxx.com/admin/index/index.html 返回 ['admin','index','index.html']
-    *request.vhost
-    >当前浏览器访问的虚拟主机。
+  *request.Cookie
+  >cookie对象封装，格式{cookieName:cookieValue}
+  *request.Session
+  >session对象封装（需要在config.js开启session功能，会轻微影响服务器性能）格式同cookie。
+  >开启session的同时会生成一个cookie，名字可以在config.js设置。session下的update一般情况请勿操作。服务器会自行判断更新该值。
+  *request.route
+  >路由路径封装。浏览器地址http://xxx.com/admin/index/index.html 返回 ['admin','index','index.html']
+  *request.vhost
+  >当前浏览器访问的虚拟主机。
 
 #response
 
-    *response.setCookie(obj);
-    >设置cookie函数，传入参数{cookieName:cookieValue}
-    *response.delCookie(obj);
-    >删除cookie函数，传入参数{cookieName:cookieValue}（必须要完全对应）
-    *response.setSession(obj);
-    >设置session函数，传入参数{sessionName:sessionValue}
-    *response.delSession(obj);
-    >删除ession函数，传入参数{sessionName:sessionValue}
-    *response.display(file)
-    >传入file地址。未开启vhost的情况在view目录下寻找，如显示view/index.html => response.display('index.html');
-    >如果开启了vhost，则会在view目录后面自动跟上vhost目录。如：view/admin/index.html
+  *response.setCookie(obj);
+  >设置cookie函数，传入参数{cookieName:cookieValue}
+  *response.delCookie(obj);
+  >删除cookie函数，传入参数{cookieName:cookieValue}（必须要完全对应）
+  *response.setSession(obj);
+  >设置session函数，传入参数{sessionName:sessionValue}
+  *response.delSession(obj);
+  >删除ession函数，传入参数{sessionName:sessionValue}
+  *response.display(file)
+  >传入file地址。未开启vhost的情况在view目录下寻找，如显示view/index.html => response.display('index.html');
+  >如果开启了vhost，则会在view目录后面自动跟上vhost目录。如：view/admin/index.html
