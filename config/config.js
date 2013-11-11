@@ -10,7 +10,7 @@ module.exports = {
     session:true,//是否开启服务器session(会影响性能)
     sessionId:'harborsId',//session存储的cookie名字
     SessionSurvavil:1000*60*60,//session信息默认客户端误操作后保留的有效时间（默认1小时）
-    clearSession:1000*60*30,//session清理时间（默认值1小时）
+    clearSession:1000*60*60,//session清理时间（默认值1小时）
     //主机设置
     vhost:true,//是否开启虚拟主机服务，开启的话默认会寻找controller目录下的虚拟主机目录
     serverType:'dynamic',//主机类型，动态:'dynamic'，静态响应式服务器:'static'.只有在关闭vhost的时候生效

@@ -1,6 +1,7 @@
-##harbors ![build status](https://secure.travis-ci.org/coreyti/showdown.png)
+harbors ![build status](https://secure.travis-ci.org/coreyti/showdown.png)
+=======
 
-一款轻量级的web服务器框架
+一款轻量级的web服务器框架 v0.0.5
 
 （暂时处于beta版，bug请联系QQ：254048436）
 
@@ -41,11 +42,7 @@ harbors支持apache的vhost类似功能。具体配置在config/config.js中开�
 
 ##API
 
-正在跟进。。。
-
-在稍后的0.0.5公开测试版的时候会完善相应的API文档。
-
-##request
+###request
 
   >>**request.Cookie**
   >
@@ -65,7 +62,7 @@ harbors支持apache的vhost类似功能。具体配置在config/config.js中开�
   >
   >当前浏览器访问的虚拟主机。
 
-#response
+###response
 
   >>**response.setCookie(obj)**
   >
