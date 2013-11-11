@@ -1,6 +1,6 @@
 module.exports = function(req,res){
-//    res.setSession({type:'123',language:'china'});
-//    console.log(req.Session);
+    res.setSession({type:'123',language:'china'});
+    console.log(req.Session);
 //    res.delSession({type:null});
 //    for(var i=0;i<100000000;i++){
 //        var r = Math.random();
