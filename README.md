@@ -1,7 +1,7 @@
 harbors ![build status](https://secure.travis-ci.org/coreyti/showdown.png)
 =======
 
-一款轻量级的web服务器框架 v0.1.0
+一款轻量级的web服务器框架 v0.1.1
 
   0.1.0版本后终于脱去了beta的外套了。接下去的版本将陆续增加更多的扩展插件。
 
