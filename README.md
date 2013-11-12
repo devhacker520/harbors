@@ -33,6 +33,10 @@ harbors ![build status](https://secure.travis-ci.org/coreyti/showdown.png)
   >**0.1.0**
   >
   >功能测试、删除测试代码，稳定版发布
+  >
+  >**0.1.1**
+  >
+  >增加mysql支持
 
 安装方法：
 
@@ -118,3 +122,40 @@ harbors支持apache的vhost类似功能。具体配置在config/config.js中开�
   >**response.render(file,param)**
   >
   >传入file地址。和file方法一样，不过render渲染的是jade模板，传入jade模板文件，第二个参数为传入参数。
+
+##Database
+
+###mysql
+
+暂时只支持mysql，而且方法也有限，有好的建议、意见请发送到邮箱devhacker520@gamil.com
+
+在config开启mysql后，可以在任何地方使用harbors.mysql调用。
+
+  >**harbors.mysql.changeDatabase(databasename)**
+  >
+  >传入数据库名字databasename，用于更改config中设置的调用数据库，更改后，整个项目中所有mysql调用的数据库都会更改。
+  >
+  >**harbors.mysql.findData(table,condition,callback)**
+  >
+  >传入table表的名字，condition查询条件{name:'admin'}，callback为回调函数，传入查询结果：
+  >
+  >    harbors.mysql.findData('users',{name:'admin'},function(data){
+  >        console.log(data)
+  >    })
+  >
+  >**harbors.mysql.insterData(table,condition,callback)**
+  >
+  >传入参数和findData一样，用于插入数据。
+  >
+  >**harbors.mysql.deleteData**
+  >
+  >传入参数和上面相同，用与删除符合条件的数据。
+  >
+  >**harbors.mysql.count(table,condition,callback)**
+  >
+  >传入参数和上面相同，返回符合条件的数据总数量。
+  >
+  >**harbors.mysql.query(query,callback)**
+  >
+  >传入参数query为sql语句，callback为回调函数，返回值根据sql语句不同会有所不同。
+  >

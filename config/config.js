@@ -21,11 +21,11 @@ module.exports = {
     gzip:true,//是否开启gzip
     gzipFile:/css|js|html|htm/ig,//执行压缩的文件类型
     //数据库设置
-    database:'mysql',//暂时只支持mysql数据库
-    databaseHost:'127.0.0.1',//数据库地址
-    databaseUser:'root',//数据库用户名
-    databasePassword:'',//数据库密码
-    databaseName:'itharbors',//链接默认数据库，以后可以使用changeDatabase方法更改
+    mysql:false,//暂时只支持mysql数据库
+    mysqlHost:'127.0.0.1',//数据库地址
+    mysqlUser:'root',//数据库用户名
+    mysqlPassword:'',//数据库密码
+    mysqldatabase:'mysql',//链接默认数据库，以后可以使用changeDatabase方法更改
     //开发设置
     deBug:false//调试模式，自动打印出运行状态流程等信息
 };
