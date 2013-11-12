@@ -1,16 +1,4 @@
 module.exports = {
-    'www.itharbors.com':{
-        baseDir:'common',
-        type:'dynamic'//动态服务器（自动寻找控制器，在controller文件夹下）
-    },
-    'resource.itharbors.com':{
-        baseDir:'resource',
-        type:'static'//静态服务器（自动响应文件，在view文件夹下）
-    },
-    'admin.itharbors.com':{
-        baseDir:'common',
-        type:'dynamic'
-    },
     //测试用虚拟主机
     '127.0.0.1':{
         baseDir:'administrator',
