@@ -1,13 +1,20 @@
 module.exports = function(req,res){
-//    res.setSession({type:'123',language:'china'});
-//    console.log(req.Session);
-//    res.delSession({type:null});
-//    for(var i=0;i<100000000;i++){
-//        var r = Math.random();
-//    }
-//    require('./'+req.route[0])(req,res);
-    res.render('index.jade',{data:123});
-//    res.display('test.html');
-//    res.writeHead(200, {"Content-Type": "text/plain", "Connection": "close"});
-//    res.end("1234");
+
+    //增加session信息
+    //res.setSession({type:'123',language:'china'});
+
+    //打印session信息
+    //console.log(req.Session);
+
+    //删除session信息
+    //res.delSession({type:null});
+
+    //中转路由（传递给其他控制器，记得做容错）
+    //require('./'+req.route[0])(req,res);
+
+    //显示动态模板
+    //res.render('index.jade',{data:123});
+
+    //显示静态文件
+    res.display('index.html');
 };
