@@ -1,7 +1,7 @@
 harbors ![build status](https://secure.travis-ci.org/coreyti/showdown.png)
 =======
 
-一款轻量级的web服务器框架 v0.1.1
+一款轻量级的web服务器框架 v0.1.3
 
   0.1.0版本后终于脱去了beta的外套了。接下去的版本将陆续增加更多的扩展插件。
 
@@ -37,6 +37,10 @@ harbors ![build status](https://secure.travis-ci.org/coreyti/showdown.png)
   >**0.1.1**
   >
   >增加mysql支持
+  >
+  >**0.1.3**
+  >
+  >紧急修复display方法变量被替代造成兵法请求时部分文件404的问题
 
 安装方法：
 
