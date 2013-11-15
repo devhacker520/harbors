@@ -14,7 +14,7 @@ module.exports = function(req,res){
 
     //显示动态模板
     //res.render('index.jade',{data:123});
-
+    console.log(222)
     //显示静态文件
     res.display('index.html');
 };
