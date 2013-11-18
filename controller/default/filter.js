@@ -13,8 +13,9 @@ module.exports = function(req,res){
     //require('./'+req.route[0])(req,res);
 
     //显示动态模板
-    //res.render('index.jade',{data:123});
-    console.log(222)
+    res.render('/admin/index.jade',{data:123});
+
+    res.setCookie({abc:'abc'},0);
     //显示静态文件
-    res.display('index.html');
+//    res.display('/default/index.html');
 };

@@ -1,7 +1,45 @@
 module.exports = {
+    //正式域名
+    'www.itharbors.com':{
+        baseDir:'www',
+        type:'dynamic'
+    },
+    'admin.itharbors.com':{
+        baseDir:'admin',
+        type:'dynamic'
+    },
+    'resources.itharbors.com':{
+        baseDir:'resources',
+        type:'static'
+    },
+    //树梅π
+    'www.wangsijie.com.cn':{
+        baseDir:'www',
+        type:'dynamic'
+    },
+    'admin.wangsijie.com.cn':{
+        baseDir:'admin',
+        type:'dynamic'
+    },
+    'resources.wangsijie.com.cn':{
+        baseDir:'resources',
+        type:'static'
+    },
     //测试用虚拟主机
-    '127.0.0.1':{
-        baseDir:'default',
+    'dev.www.itharbors.com':{
+        baseDir:'www',
+        type:'dynamic'
+    },
+    'dev.admin.itharbors.com':{
+        baseDir:'admin',
+        type:'dynamic'
+    },
+    'dev.resources.itharbors.com':{
+        baseDir:'resources',
+        type:'static'
+    },
+    'xiamischool.vicp.net':{
+        baseDir:'resources',
         type:'static'
     }
 };
