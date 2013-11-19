@@ -1,0 +1,13 @@
+doctype 5
+html
+    head
+        title Login
+        link(href=route.resources+"css/admin/bootstrap.css",rel="stylesheet")
+        link(href=route.resources+"css/admin/login.css",rel="stylesheet")
+    body
+        div.container
+            form.form-signin(action="/")
+                h2.form-signin-heading Please sign in
+                input.form-control(type="text",name="user[name]",placeholder="Email address",required,autofocus)
+                input.form-control(type="password",name="user[password]",placeholder="Password",required)
+                button.btn.btn-lg.btn-primary.btn-block(type="submit") Sign in

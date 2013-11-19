@@ -1,0 +1,41 @@
+doctype 5
+html
+    head
+        -if(!title) var title='NONE';
+        title= title
+        link(href="http://fonts.googleapis.com/css?family=Nobile",rel="stylesheet")
+        link(href="/static/css/admin/bootstrap.css",rel="stylesheet")
+        link(href="/static/css/admin/index.css",rel="stylesheet")
+        script(src="/static/js/jquery-2.0.3.min.js")
+        script(src="/static/js/bootstrap.min.js")
+    body
+        .container
+            .navbar.navbar-default
+                .navbar-header
+                    button.navbar-toggle(type="button",data-toggle="collapse",data-target=".navbar-collapse")
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href="#") ITHARBORS
+                .navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        li(class=(title=='Overview')?'active':'')
+                            a(href="/") Overview
+                        li(class=(title=='News')?'active':'')
+                            a(href="/news/") News
+                        li(class=(title=='Setting')?'active dropdown':'dropdown')
+                            a.dropdown-toggle(href="#",data-toggle="dropdown") Setting
+                                b.caret
+                            ul.dropdown-menu
+                                li.dropdown-header Setting
+                                li.divider
+                                li.dropdown-header Singn
+                                li
+                                    a(href="/index/logout/") Logout
+                    //-ul.nav.navbar-nav.navbar-right
+                        li.active
+                            a(href="./") Default
+                        li
+                            a(href="../navbar-static-top/") Static top
+                        li
+                            a(href="../navbar-fixed-top/") Fixed top
