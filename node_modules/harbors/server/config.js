@@ -30,6 +30,6 @@ module.exports = {
         Host:'127.0.0.1',//数据库地址
         User:'root',//数据库用户名
         Password:'',//数据库密码
-        database:'mysql'//链接默认数据库，以后可以使用changeDatabase方法更改
+        Database:'mysql'//链接默认数据库，以后可以使用changeDatabase方法更改
     }
 };

@@ -14,6 +14,13 @@ module.exports = function(req,res){
     //中转路由（传递给其他控制器，记得做容错）
     //require('./'+req.route[0])(req,res);
 
+
+    console.log(req.session);
+    res.setSession({abc:123});
     //显示动态模板
+    res.mysql('use itharbors');
+    res.mysql('select * from users',function(err,res){
+        console.log(res);
+    });
     res.render('/admin/login.jade',{route:harbors.route});
 };
