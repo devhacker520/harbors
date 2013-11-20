@@ -14,8 +14,6 @@ module.exports = function(req,res){
     //中转路由（传递给其他控制器，记得做容错）
     //require('./'+req.route[0])(req,res);
 
-    res.delSession(["abc"]);
-    console.log(req.Session)
     //显示动态模板
     res.render('/admin/login.jade',{route:harbors.route});
 };

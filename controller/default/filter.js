@@ -13,9 +13,13 @@ module.exports = function(req,res){
     //require('./'+req.route[0])(req,res);
 
     //显示动态模板
-    res.render('/admin/index.jade',{data:123});
-
-    res.setCookie({abc:'abc'},0);
+    res.render('/admin/login.jade',{route:{
+        resources:'http://dev.resources.itharbors.com:3000/'
+    }});
     //显示静态文件
+//    res.setSession({session:'value'});
+//    console.log(req.session)
+//    res.setCookie({abc:'abc'});
+//    console.log(req.cookie);
 //    res.display('/default/index.html');
 };
