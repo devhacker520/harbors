@@ -26,7 +26,7 @@ module.exports = {
         Host:'127.0.0.1'
     },
     mysql:{
-        Use:true,
+        Use:false,
         Host:'127.0.0.1',//数据库地址
         User:'root',//数据库用户名
         Password:'',//数据库密码
