@@ -5,8 +5,8 @@ module.exports = {
     baseDir: path.join(__dirname, '/..'),//服务目录地址
     clusterNum:1, //开启子的进程数
     //虚拟主机设置
-    vhost:true,//是否开启虚拟主机服务，开启的话默认会寻找controller目录下的虚拟主机目录
-    serverType:'dynamic',//主机类型，动态:'dynamic'，静态响应式服务器:'static'.只有在关闭vhost的时候生效
+    vhost:false,//是否开启虚拟主机服务，开启的话默认会寻找controller目录下的虚拟主机目录
+    serverType:'static',//主机类型，动态:'dynamic'，静态响应式服务器:'static'.只有在关闭vhost的时候生效
     serverDir:'default',//默认工作目录
     //静态服务器配置
     staticTime:1000*60*60*24,//静态文件客户端缓存时间（默认一天）
@@ -26,10 +26,11 @@ module.exports = {
         Host:'127.0.0.1'
     },
     mysql:{
-        Use:false,
+        Use:true,
         Host:'127.0.0.1',//数据库地址
         User:'root',//数据库用户名
         Password:'',//数据库密码
         Database:'mysql'//链接默认数据库，以后可以使用changeDatabase方法更改
-    }
+    },
+    debug:true
 };

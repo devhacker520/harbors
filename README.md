@@ -1,7 +1,7 @@
 harbors ![build status](https://secure.travis-ci.org/coreyti/showdown.png)
 =======
 
-一款轻量级的web服务器框架 v0.2.0
+一款轻量级的web服务器框架 v0.2.1
 
 
   欢迎提交各种bug、建议到邮箱：devhacker520@gmail.com
@@ -12,6 +12,20 @@ harbors ![build status](https://secure.travis-ci.org/coreyti/showdown.png)
 安装方法：
 
     npm install harbors
+
+开启session功能需要redis支持
+
+    cd /tmp
+
+    wget http://redis.googlecode.com/files/redis-2.2.13.tar.gz
+
+    tar -zxf redis-2.2.13.tar.gz
+
+    cd redis-2.2.13
+
+    make
+
+    sudo make install
 
 node start.js会自动调用harbors，服务器会自动处理路由关系，后续版本将增加手动路由表功能。
 
@@ -42,12 +56,24 @@ harbors支持apache的vhost类似功能。具体配置在config/config.js中开�
 
 开启vhost后：controller/vhost.baseDir/filter.js
 
+虚拟主机支持单独配置以下属性，不配置的话取默认config中的值：
+
+serverType、serverDir、staticTime、sraticFile、session、sessionId、SessionSurvavil、jade、jadeTime、gzip、gzipFile
+
 
 
 ##API
 
 ###request
 
+  >**request.get**
+  >
+  >用户get参数，格式{Name:Value}
+  >
+  >**request.post**
+  >
+  >用户post参数，格式{Name:Value}
+  >
   >**request.cookie**
   >
   >cookie对象封装，格式{cookieName:cookieValue}
@@ -67,7 +93,7 @@ harbors支持apache的vhost类似功能。具体配置在config/config.js中开�
 
   >**response.setCookie(obj,expires,path)**
   >
-  >obj=>传入的cookie，expires=>过期时间,等于0时删除填入的cookie，path=>cookie存储path
+  >obj=>传入的cookie，expires=>过期时间,等于0时删除填入的cookie，path=>cookie存储path，不填则默认取配置文件中的时间
   >
   >设置cookie函数，传入参数{cookieName:cookieValue}
   >
@@ -75,7 +101,7 @@ harbors支持apache的vhost类似功能。具体配置在config/config.js中开�
   >
   >**response.setSession(obj,expires)**
   >
-  >obj=>传入的session，expires=>过期时间,等于0时删除填入的session
+  >obj=>传入的session，expires=>过期时间,等于0时删除填入的session，不填则默认取配置文件中的时间
   >
   >设置、删除session函数，传入参数{sessionName:sessionValue}
   >
@@ -88,6 +114,10 @@ harbors支持apache的vhost类似功能。具体配置在config/config.js中开�
   >**response.render(file,param)**
   >
   >传入file地址。和file方法一样，不过render渲染的是jade模板，传入jade模板文件，第二个参数为传入参数。
+  >
+  >**response.redirect(path)**
+  >
+  >跳转页面，path为将要跳转的地址
 
 ##Database
 
@@ -103,5 +133,9 @@ harbors支持apache的vhost类似功能。具体配置在config/config.js中开�
 
   >**harbors.redis.xxx**
   >
-  >文档完善中
+
+没有想好要怎么封装数据库方法。有想法弄成像淘宝那样统一查询接口，也想省下cpu计算的开销。
+暂时还没有动工
+
+文档完善中。。。
 
