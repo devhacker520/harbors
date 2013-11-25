@@ -5,7 +5,7 @@ module.exports = {
     baseDir: path.join(__dirname, '/..'),//服务目录地址
     clusterNum:1, //开启子的进程数
     //虚拟主机设置
-    vhost:false,//是否开启虚拟主机服务，开启的话默认会寻找controller目录下的虚拟主机目录
+    vhost:true,//是否开启虚拟主机服务，开启的话默认会寻找controller目录下的虚拟主机目录
     serverType:'static',//主机类型，动态:'dynamic'，静态响应式服务器:'static'.只有在关闭vhost的时候生效
     serverDir:'default',//默认工作目录
     //静态服务器配置
@@ -16,7 +16,7 @@ module.exports = {
     sessionId:'harborsId',//session存储的cookie名字
     SessionSurvavil:1000*60*60,//session信息默认客户端误操作后保留的有效时间（默认1小时）
     jade:true,//是否开启jade模板
-    jadeTime:1000*60*10,//jade模板缓存时间（默认10分钟）
+    dynamicTime:1000*60,//动态控制器缓存时间（默认1分钟）
     //gzip设置
     gzip:false,//是否开启gzip
     gzipFile:/css|js|html|htm/ig,//执行压缩的文件类型
