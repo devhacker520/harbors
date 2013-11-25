@@ -13,7 +13,7 @@ module.exports = function(req,res){
     //require('./'+req.route[0])(req,res);
 
     //显示动态模板
-    res.render('/admin/login.jade',{route:{
+    res.render('/login.jade',{route:{
         resources:'http://dev.resources.itharbors.com:3000/'
     }});
     //显示静态文件
