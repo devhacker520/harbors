@@ -1,6 +1,7 @@
 module.exports = function(req,res){
 
-//    harbors.route = require(harbors.config.baseDir+'/config/route');
+    var route = require(harbors.config.baseDir+'/config/route');
+    console.log(route)
 
     //增加session信息
     //res.setSession({type:'123',language:'china'});
@@ -21,7 +22,7 @@ module.exports = function(req,res){
 //    res.mysql('select * from users',function(err,res){
 //        console.log(res);
 //    });
-    res.end('333');
+//    res.end('333');
     //显示动态模板
-//    res.render('/login.jade',{route:harbors.route});
+    res.render('/login.jade',{route:route});
 };
