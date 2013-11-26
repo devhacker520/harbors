@@ -1,7 +1,6 @@
 module.exports = function(req,res){
 
     var route = require(harbors.config.baseDir+'/config/route');
-    console.log(route)
 
     //增加session信息
     //res.setSession({type:'123',language:'china'});

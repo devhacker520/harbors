@@ -12,11 +12,12 @@ module.exports = {
     staticTime:1000*60*60*24,//静态文件客户端缓存时间（默认一天）
     sraticFile:'index.html',//静态文件服务器访问文件夹地址默认寻找目录下的这个文件
     //动态服务器配置
+    dynamicTime:1000*10,//动态控制器缓存时间（默认1分钟，内存型缓存不建议缓存太长时间）
+    cacheLevel:3,//0、不开启缓存，1、响应304状态，2、内存缓存（缓存量大的话需要大量的内存空间，并且反馈请求的时候需要占用部分时间来检查）3、304和内存混合缓存
     session:true,//是否开启服务器session(会影响性能，需要在数据库设置中开启redis)
     sessionId:'harborsId',//session存储的cookie名字
     SessionSurvavil:1000*60*60,//session信息默认客户端误操作后保留的有效时间（默认1小时）
     jade:true,//是否开启jade模板
-    dynamicTime:1000*60,//动态控制器缓存时间（默认1分钟）
     //gzip设置
     gzip:false,//是否开启gzip
     gzipFile:/css|js|html|htm/ig,//执行压缩的文件类型
@@ -32,5 +33,6 @@ module.exports = {
         Password:'',//数据库密码
         Database:'mysql'//链接默认数据库，以后可以使用changeDatabase方法更改
     },
+    //调试模式
     debug:true
 };
