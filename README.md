@@ -1,7 +1,7 @@
 harbors ![build status](https://secure.travis-ci.org/coreyti/showdown.png)
 =======
 
-一款轻量级的web服务器框架 v0.2.1
+一款轻量级的web服务器框架 v0.2.2
 
 
   欢迎提交各种bug、建议到邮箱：devhacker520@gmail.com
@@ -52,14 +52,21 @@ harbors支持apache的vhost类似功能。具体配置在config/config.js中开�
 
 需要注意的是，如果在config.js中开启了vhost，则不管是'dynamic'还是'static'模式都会在目录下寻找自己的主机目录。
 
-如原目录：controller/default/filter.js
+  host/vhost.baseDir/controller/filter.js
 
-开启vhost后：controller/vhost.baseDir/filter.js
+display方法则是寻找虚拟主机工作目录下的view文件夹
+
+  host/vhost.baseDir/view/index.html
 
 虚拟主机支持单独配置以下属性，不配置的话取默认config中的值：
 
-serverType、serverDir、staticTime、sraticFile、session、sessionId、SessionSurvavil、jade、jadeTime、gzip、gzipFile
+serverType、serverDir、staticTime、sraticFile、session、sessionId、SessionSurvavil、jade、jadeTime、gzip、gzipFile、debug
 
+##debug
+
+支持在每个虚拟主机中配置debug选项，开启debug的虚拟主机，将会动态加载工作目录下的控制器，和php一方方便开发，不必每次都重启进程了。
+
+ debug下还会打印出部分运行流程，方便调试错误以及发现bug等。
 
 
 ##API
@@ -118,6 +125,10 @@ serverType、serverDir、staticTime、sraticFile、session、sessionId、Session
   >**response.redirect(path)**
   >
   >跳转页面，path为将要跳转的地址
+  >
+  >**response.send(String)**
+  >
+  >向客户端发送文本信息，和自带的end区别是会自动加上响应头部以及缓存等设置。
 
 ##Database
 

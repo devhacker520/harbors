@@ -1,0 +1,14 @@
+/*超出隐藏*/
+.ellipsis-td{
+    white-space:nowrap;
+}
+.ellipsis{
+    width:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+th{
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
