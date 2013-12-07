@@ -6,8 +6,9 @@ module.exports = {
         cacheLevel:1,
         debug:true
     },
-    'dev.resources.test.com':{
+    'dev.resources.itharbors.com':{
         serverDir:'resources',
-        serverType:'static'
+        serverType:'static',
+        debug:true
     }
 };

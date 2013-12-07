@@ -1,7 +1,7 @@
 harbors ![build status](https://secure.travis-ci.org/coreyti/showdown.png)
 =======
 
-一款轻量级的web服务器框架 v0.2.2
+一款轻量级的web服务器框架 v0.2.3
 
 
   欢迎提交各种bug、建议到邮箱：devhacker520@gmail.com
