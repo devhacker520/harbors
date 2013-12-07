@@ -1,6 +1,4 @@
 module.exports = {
-    //resources:'http://xiamischool.vicp.net:3000/',
-    //admin:'http://wsj19900505.oicp.net:3000/'
-    resources:'http://dev.resources.itharbors.com:3000/',
-    admin:'http://dev.admin.itharbors.com:3000/'
+    resources:'http://127.0.0.1:3000/',
+    admin:'http://127.0.0.1:3000/'
 };
