@@ -3,7 +3,7 @@ module.exports = {
         serverDir:'admin',
         serverType:'dynamic',
         dynamicTime:600000,
-        cacheLevel:1,
+        cacheLevel:0,
         debug:true
     },
     'dev.resources.itharbors.com':{
