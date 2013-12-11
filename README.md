@@ -3,6 +3,7 @@ harbors ![build status](https://secure.travis-ci.org/coreyti/showdown.png)
 
 一款轻量级的web服务器框架 v0.2.3
 
+LL请使用ｎｐｍ安装，ｇｉｔ代码有点儿乱，。。。这两天会整理完，见谅= =
 
   欢迎提交各种bug、建议到邮箱：devhacker520@gmail.com
 
