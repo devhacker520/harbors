@@ -5,9 +5,9 @@ module.exports = {
     baseDir: path.join(__dirname, '/..'),//服务目录地址
     clusterNum:1, //开启子的进程数
     //虚拟主机设置
-    vhost:true,//是否开启虚拟主机服务，开启的话默认会寻找controller目录下的虚拟主机目录
+    vhost:false,//是否开启虚拟主机服务，开启的话默认会寻找controller目录下的虚拟主机目录
     serverType:'mixed',//主机类型，动态:'dynamic'，静态响应式服务器:'static',混合类型:'mixed'.只有在关闭vhost的时候生效
-    serverDir:'resources',//默认工作目录
+    serverDir:'admin',//默认工作目录
     //静态服务器配置
     staticTime:1000*60*60*24,//静态文件客户端缓存时间（默认一天）
     sraticFile:'index.html',//静态文件服务器访问文件夹地址默认寻找目录下的这个文件
@@ -33,5 +33,5 @@ module.exports = {
         Password:'',//数据库密码
         Database:'harbors'//链接默认数据库，以后可以使用changeDatabase方法更改
     },
-    debug:false
+    debug:true
 };
