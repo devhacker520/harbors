@@ -1,7 +1,0 @@
-{
-    "dependencies": {
-        "cheerio":"0.12.4",
-        "nodegrass":"0.0.3",
-        "harbors":"*"
-    }
-}
