@@ -1,8 +1,8 @@
 var path = require('path');
 var harbors = require('harbors');
 
-harbors.config('./config/server.ini');
-harbors.config('./config/vhost.ini');
+//harbors.config('./config/server.ini');
+//harbors.config('./config/vhost.ini');
 
 //harbors.module('mysql',require('./module/mysql'));//自定义外部模块
 
