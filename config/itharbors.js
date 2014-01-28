@@ -32,8 +32,7 @@ module.exports = {
             session : false,
             session_id : 'HsessID',
             session_survavil : 3600000,
-            autoReload:false,
-            post : false
+            autoReload:false
         },
         php         :   {
             on : false,
