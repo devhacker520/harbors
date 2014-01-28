@@ -29,10 +29,10 @@ module.exports = {
         nodejs      :   {
             on : false,
             extname : '_.js',
-            cookie : false,
             session : false,
             session_id : 'HsessID',
             session_survavil : 3600000,
+            autoReload:false,
             post : false
         },
         php         :   {
@@ -51,6 +51,5 @@ module.exports = {
         domain:"dev.code.itharbors.com",
         listen:[80]
     }
-    */
-    ]
+    */]
 };
