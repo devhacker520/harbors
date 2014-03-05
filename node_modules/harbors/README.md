@@ -18,6 +18,8 @@ HARBORS
   >
   >增加基于web的管理进程功能。（暂时只有进程开关）
   >
+  >fastcgi操作由string改为buffer，修复php返回数据流格式被篡改的bug。
+  >
 
 0.3.3更新:
 
