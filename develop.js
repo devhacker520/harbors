@@ -3,10 +3,12 @@ var harbors = require('harbors');
 var handle = harbors.Handle.create(function(req, res){
     res.end('host is not found!');
 });
-handle.addHost('localhost', function(req, res){
+
+handle.addDomain('a.test.com', function(req, res){
     res.end('localhost');
 });
-handle.addHost('127.0.0.1', function(req, res){
+
+handle.addDomain('127.0.0.1', function(req, res){
     res.end('127.0.0.1');
 });
 
