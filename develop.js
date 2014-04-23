@@ -28,5 +28,7 @@ _p.setTask('createServer', function(){
 
 });
 
+harbors.log(123);
+
 //start child process
 _p.fork('createServer');
