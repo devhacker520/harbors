@@ -3,7 +3,7 @@ var harbors = require('harbors');
 var _p = harbors.Cluster.create();
 
 _p.setTask('createServer', function(){
-    var test = harbors.AutoRouter.create({
+    var Router = harbors.AutoRouter.create({
         '/':function(req, res){
             res.end('/');
         },
@@ -14,21 +14,23 @@ _p.setTask('createServer', function(){
             res.end('2');
         }
     });
-    test.setNotFound(function(req, res){
+    Router.setNotFound(function(req, res){
         res.end('gogogog');
     });
+
+    Router.setWorkDir('/Users/VisualSJ/project/tools');
 
     var handle = harbors.Handle.create(function(req, res){
         res.end('host is not found!');
     });
 
-    handle.addDomain('*.test.com', test);
+    handle.addDomain('*.test.com', Router);
 
     harbors.Server.create('http', '127.0.0.1', 9000, handle);
 
-});
 
-harbors.log(123);
+    harbors.Session.create();
+});
 
 //start child process
 _p.fork('createServer');
