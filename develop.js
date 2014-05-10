@@ -18,11 +18,7 @@ _p.setTask('createServer', function(){
         res.end('gogogog');
     });
 
-    Router.setWorkDir('E:\\project\\tools');
-
-    var handle = harbors.Handle.create(function(req, res){
-        res.end('host is not found!');
-    });
+    var handle = harbors.Handle.create();
 
     handle.addDomain('*.test.com', Router);
 
