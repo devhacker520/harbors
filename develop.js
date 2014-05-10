@@ -18,7 +18,7 @@ _p.setTask('createServer', function(){
         res.end('gogogog');
     });
 
-    Router.setWorkDir('/Users/VisualSJ/project/tools');
+    Router.setWorkDir('E:\\project\\tools');
 
     var handle = harbors.Handle.create(function(req, res){
         res.end('host is not found!');
