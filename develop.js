@@ -18,11 +18,11 @@ _p.setTask('createServer', function(){
         res.end('gogogog');
     });
 
-    var handle = harbors.Handle.create();
+    var vhost = harbors.VHost.create();
 
-    handle.addDomain('*.test.com', Router);
+    vhost.addDomain('*.test.com', Router);
 
-    harbors.Server.create('http', '127.0.0.1', 9000, handle);
+    harbors.Server.create('http', '127.0.0.1', 9000, vhost);
 
 
     harbors.Session.create();
@@ -30,3 +30,9 @@ _p.setTask('createServer', function(){
 
 //start child process
 _p.fork('createServer');
+
+console.time('a');
+for(var i=0;i<1000000;i++){
+    var res = harbors.reponse({test: '123'});
+}
+console.timeEnd('a');
