@@ -30,9 +30,3 @@ _p.setTask('createServer', function(){
 
 //start child process
 _p.fork('createServer');
-
-console.time('a');
-for(var i=0;i<1000000;i++){
-    var res = harbors.reponse({test: '123'});
-}
-console.timeEnd('a');
