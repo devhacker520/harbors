@@ -19,6 +19,7 @@ _p.setTask('createServer', function(){
     });
 
     var vhost = harbors.VHost.create();
+    vhost.setAcceptPost(true);
 
     vhost.addDomain('*.test.com', Router);
 
