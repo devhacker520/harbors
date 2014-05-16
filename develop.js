@@ -3,7 +3,7 @@ var harbors = require('harbors');
 var _p = harbors.Cluster.create();
 
 _p.setTask('createServer', function(){
-    var test = harbors.AutoRouter.create({
+    var Router = harbors.AutoRouter.create({
         '/':function(req, res){
             res.end('/');
         },
@@ -14,21 +14,20 @@ _p.setTask('createServer', function(){
             res.end('2');
         }
     });
-    test.setNotFound(function(req, res){
+    Router.setNotFound(function(req, res){
         res.end('gogogog');
     });
 
-    var handle = harbors.Handle.create(function(req, res){
-        res.end('host is not found!');
-    });
+    var vhost = harbors.VHost.create();
+    vhost.setAcceptPost(true);
 
-    handle.addDomain('*.test.com', test);
+    vhost.addDomain('*.test.com', Router);
 
-    harbors.Server.create('http', '127.0.0.1', 9000, handle);
+    harbors.Server.create('http', '127.0.0.1', 9000, vhost);
 
+
+    harbors.Session.create();
 });
-
-harbors.log(123);
 
 //start child process
 _p.fork('createServer');
