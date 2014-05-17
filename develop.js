@@ -23,11 +23,14 @@ _p.setTask('createServer', function(){
 
     vhost.addDomain('*.test.com', Router);
 
-    harbors.Server.create('http', '127.0.0.1', 9000, vhost);
+    harbors.Server.create('http', '127.0.0.1', 8888, vhost);
 
 
-    harbors.Session.create();
 });
 
+harbors.Config.create(require('./config'));
+
 //start child process
-_p.fork('createServer');
+//_p.fork('createServer');
+//_p.fork('createServer');
+//_p.fork('createServer');
