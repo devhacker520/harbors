@@ -11,6 +11,13 @@ _p.setTask('createServer', function(){
             res.end('1');
         },
         '/test/2': function(req, res){
+//            res.setCookie('test', '123', {
+//                httpOnly: true,
+//                path: '/',
+//                maxAge: 1000
+//            });
+            console.log(req.getCookie('test'));
+//            res.writeHeader(200);
             res.end('2');
         }
     });
@@ -28,9 +35,7 @@ _p.setTask('createServer', function(){
 
 });
 
-harbors.Config.create(require('./config'));
+//harbors.Config.create(require('./config'));
 
 //start child process
-//_p.fork('createServer');
-//_p.fork('createServer');
-//_p.fork('createServer');
+_p.fork('createServer');
